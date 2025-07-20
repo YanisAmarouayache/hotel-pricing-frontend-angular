@@ -84,7 +84,7 @@ export default [
       'comma-dangle': ['error', 'always-multiline'],
       'quotes': ['error', 'single'],
       'semi': ['error', 'always'],
-      'indent': ['error', 2, { SwitchCase: 1 }],
+      // 'indent': ['error', 2, { SwitchCase: 1 }],
       'no-trailing-spaces': 'error',
       'eol-last': 'error',
       'no-multiple-empty-lines': ['error', { max: 1 }],

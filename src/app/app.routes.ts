@@ -1,9 +1,13 @@
 import { Routes } from '@angular/router';
+import { HotelsComponent } from '../features/hotels/hotels.component';
 
 export const routes: Routes = [
   {
     path: 'hotels',
-    loadComponent: () =>
-      import('../features/hotels/hotels.component').then(m => m.HotelsComponent),
+        component: HotelsComponent,
+    },
+    {
+        path: '**',
+        redirectTo: '', // This will redirect any unmatched route to `/`
   },
 ];

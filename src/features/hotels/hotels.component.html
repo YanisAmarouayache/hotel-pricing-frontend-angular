@@ -1,1 +1,10 @@
-<p>hotels works!</p>
+<ng-container *ngIf="hotels | async as hotelList; else loading">
+    <div *ngFor="let hotel of hotelList; trackBy: trackByHotelId">
+        <h3>{{ hotel.name }}</h3>
+        <p>{{ hotel.address }}</p>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <div>Loading hotels...</div>
+</ng-template>

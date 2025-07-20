@@ -1,23 +1,18 @@
-import { APOLLO_OPTIONS } from 'apollo-angular';
-import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+// graphql.module.ts
+import { provideApollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
+import { inject } from '@angular/core';
 import { environment } from '../../environment/environment';
-import { NormalizedCacheObject } from '@apollo/client/core';
 
-const api = environment.apiUrl;
-const uri = `${api}/graphql`;
-
-export function createApollo(httpLink: HttpLink): ApolloClientOptions<NormalizedCacheObject> {
-  return {
-    link: httpLink.create({ uri }),
-    cache: new InMemoryCache(),
-  };
-}
+const api = environment.graphqlUrl;
 
 export const GRAPHQL_PROVIDERS = [
-  {
-    provide: APOLLO_OPTIONS,
-    useFactory: createApollo,
-    deps: [HttpLink],
-  },
+  provideApollo(() => {
+    const httpLink = inject(HttpLink);
+    return {
+      link: httpLink.create({ uri: api }),
+      cache: new InMemoryCache(),
+    };
+  }),
 ];

@@ -1,33 +1,32 @@
-
-  query GetHotels {
-    hotels {
+query GetHotels {
+  hotels {
+    id
+    name
+    city
+    address
+    starRating
+    userRating
+    reviewCount
+    description
+    amenities
+    images
+    isCompetitor
+    url
+    dailyPrices {
+      id
+      date
+      price
+      currency
+      availability
+      roomCategoryId
+      scrapedAt
+    }
+    roomCategories {
       id
       name
-      city
-      address
-      starRating
-      userRating
-      reviewCount
       description
-      amenities
-      images
-      isCompetitor
-      url
-      dailyPrices {
-        id
-        date
-        price
-        currency
-        availability
-        roomCategoryId
-        scrapedAt
-      }
-      roomCategories {
-        id
-        name
-        description
-      }
-      createdAt
-      updatedAt
     }
+    createdAt
+    updatedAt
   }
+}

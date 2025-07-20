@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hotel-princing-frontend-angular';
+  title = 'hotel-pricing-frontend-angular';
 }

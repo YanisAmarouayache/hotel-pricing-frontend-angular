@@ -15,9 +15,9 @@ RUN npm run build -- --configuration production
 FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=builder /app/dist/hotel-princing-frontend-angular/browser/ /usr/share/nginx/html/
-
+COPY --from=builder /app/dist/hotel-pricing-frontend-angular/browser/ /usr/share/nginx/html/
 COPY --from=builder /app/src/assets/config.json /usr/share/nginx/html/assets/config.json
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 
 EXPOSE 80

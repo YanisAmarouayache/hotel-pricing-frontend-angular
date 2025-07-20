@@ -44,17 +44,16 @@ export const GetHotelsDocument = gql`
     `;
 
   @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
   })
-  export class GetHotelsGQL extends Apollo.Query<GetHotelsQuery, GetHotelsQueryVariables> {
-    document = GetHotelsDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
-export type GetHotelsQueryVariables = Exact<{ [key: string]: never; }>;
+export class GetHotelsGQL extends Apollo.Query<GetHotelsQuery, GetHotelsQueryVariables> {
+  document = GetHotelsDocument;
 
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
+  }
+}
+export type GetHotelsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetHotelsQuery = { __typename?: 'Query', hotels: Array<{ __typename?: 'Hotel', id: number, name: string, city: string, address?: string | null, starRating?: number | null, userRating?: number | null, reviewCount?: number | null, description?: string | null, amenities?: Array<string> | null, images?: Array<string> | null, isCompetitor: boolean, url: string, createdAt: any, updatedAt: any, dailyPrices?: Array<{ __typename?: 'DailyPrice', id: number, date: any, price: number, currency: string, availability: boolean, roomCategoryId?: number | null, scrapedAt: any }> | null, roomCategories?: Array<{ __typename?: 'RoomCategory', id: number, name: string, description?: string | null }> | null }> };
 
@@ -134,11 +133,9 @@ export type Hotel = {
   userRating?: Maybe<Scalars['Float']['output']>;
 };
 
-
 export type HotelLatestPriceAtDateArgs = {
   date: Scalars['String']['input'];
 };
-
 
 export type HotelPreviousPriceAtDateArgs = {
   date: Scalars['String']['input'];
@@ -151,7 +148,6 @@ export type Mutation = {
   scrapeAndStoreBatch: BatchScrapingResult;
   updateHotel: Hotel;
 };
-
 
 export type MutationCreateHotelArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
@@ -167,16 +163,13 @@ export type MutationCreateHotelArgs = {
   userRating?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type MutationDeleteHotelArgs = {
   id: Scalars['Int']['input'];
 };
 
-
 export type MutationScrapeAndStoreBatchArgs = {
   hotelIds: Array<Scalars['Int']['input']>;
 };
-
 
 export type MutationUpdateHotelArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
@@ -203,22 +196,18 @@ export type Query = {
   hotelsWithPricesByDate: Array<Hotel>;
 };
 
-
 export type QueryHotelArgs = {
   id: Scalars['Int']['input'];
 };
-
 
 export type QueryHotelsWithAllDailyPricesByDateArgs = {
   date: Scalars['String']['input'];
 };
 
-
 export type QueryHotelsWithPricesBetweenDatesArgs = {
   endDate: Scalars['String']['input'];
   startDate: Scalars['String']['input'];
 };
-
 
 export type QueryHotelsWithPricesByDateArgs = {
   date: Scalars['String']['input'];

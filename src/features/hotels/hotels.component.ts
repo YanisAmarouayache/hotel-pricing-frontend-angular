@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-hotels',
+  changeDetection: ChangeDetectionStrategy.OnPush, selector: 'app-hotels',
   standalone: true,
   imports: [],
   templateUrl: './hotels.component.html',
-  styleUrls: ['./hotels.component.css']
+  styleUrls: ['./hotels.component.css'],
 })
 export class HotelsComponent {
 

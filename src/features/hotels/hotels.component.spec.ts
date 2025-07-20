@@ -8,9 +8,9 @@ describe('HotelsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HotelsComponent]
+      imports: [HotelsComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(HotelsComponent);
     component = fixture.componentInstance;

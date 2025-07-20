@@ -5,5 +5,5 @@ import { routes } from './app.routes';
 import { GRAPHQL_PROVIDERS } from '../core/graphql/graphql.module';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), ...GRAPHQL_PROVIDERS]
+  providers: [provideRouter(routes), ...GRAPHQL_PROVIDERS],
 };

@@ -14,7 +14,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'hotel-pricing-frontend-angular' title`, () => {
+  it('should have the \'hotel-pricing-frontend-angular\' title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('hotel-pricing-frontend-angular');
